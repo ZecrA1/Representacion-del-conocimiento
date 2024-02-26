@@ -1,0 +1,54 @@
+#Si llueve -> se riegan las plantas
+
+antecedente -> consecuente
+
+se_riegan_plantas :-llueve.
+
+Subconjunto de reglas:clausulas de horn (asi podremos garantizar que el algoritmo finaliza)
+
+uno o varios terminos separados por y -> un solo termino
+
+#Clausula de Horn(pagina 55)
+
+a/\b ->c
+c:- a,b.
+
+a-> b/\c  ---> equivalente a C.Horn ---> a ->b
+										 a ->c
+
+a\/b ->c ---> equivalente a C.Horn ---> a ->b
+										 a ->c
+c:- a.
+c:- b.
+
+
+~#Factorial
+
+#Principio de induccion
+n* (n-1)!
+
+%Factorial en prolog
+
+%factorial(+N,-R)
+es cierto si R unifica con un numero que representa el factorial de N	
+
+>>una variable nunca cambia de valor hasta que termina su ámbito(el ambito termina cuando hay un punto)
+factorial(1,1).
+>>concepto de variable matematico:
+factorial(N,R2):-N>1,N2 is N-1,factorial(N2,R),R2 is R*N.
+
+>>todas las variables deben empezar por mayusculas y los predicados en minuscula, y no puede haber espacios en blanco 
+
+
+
+
+%Natural
+
+%Principio de induccion
+natural(1).
+
+natural(N):-N>1,N2 is N-1,natural(N2).
+
+
+
+									 
